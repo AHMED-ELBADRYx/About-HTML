@@ -159,4 +159,442 @@ X<sub>2</sub>
 <body dir="ltr">
 ```
 
+---
 
+## الجداول
+
+```sh
+<table border="1" width="100%" bgcolor="#f2f2f2" align="center">
+  <thead>
+    <tr>
+      <th>عنوان 1</th>
+      <th colspan="2">عنوان 2 و3 مدمجين</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="2">صف مدمج 1 و2</td>
+      <td>خلية 2</td>
+      <td>خلية 3</td>
+    </tr>
+    <tr>
+      <td>خلية 2-2</td>
+      <td>خلية 3-2</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="3">خاتمة الجدول</td>
+    </tr>
+  </tfoot>
+</table>
+```
+
+- border لتحديد سمك الحدود.
+- colspan لدمج الأعمدة.
+- rowspan لدمج الصفوف.
+- thead, tbody, tfoot لتنظيم أقسام الجدول.
+
+---
+
+## القوائم
+
+### قائمة مرقمة
+
+```sh
+<ol type="A">
+  <li>الخيار الأول</li>
+  <li>الخيار الثاني</li>
+</ol>
+```
+
+- النوع: 1، A، a، I، i
+
+---
+
+### قائمة غير مرقمة
+
+```sh
+<ul type="circle">
+  <li>عنصر 1</li>
+  <li>عنصر 2</li>
+</ul>
+```
+
+- الأنواع: disc (افتراضي)، circle، square
+
+---
+
+### قائمة وصفية
+
+```sh
+<dl>
+  <dt>المصطلح</dt>
+  <dd>الشرح المفصل</dd>
+</dl>
+```
+
+---
+
+## تفاصيل قابلة للطي
+
+```sh
+<details>
+  <summary>عن الموقع</summary>
+  <p>نص توضيحي هنا.</p>
+  <img src="pic.jpg" alt="صورة">
+  <br>
+  <img src="pic2.jpg" alt="صورة ثانية">
+</details>
+```
+
+- الصور ستتوالى تحت بعضها باستخدام <br>.
+
+---
+
+## الحاويات
+
+### حاوية عامة
+
+```sh
+<div>
+  المحتوى هنا
+</div>
+```
+
+- عنصر block، يأخذ عرض السطر بالكامل.
+
+---
+
+### عنصر داخل السطر
+
+```sh
+<span>نص صغير</span>
+```
+
+- عنصر inline، يبقى في السطر نفسه.
+
+---
+
+## إضافة فيديو وصوت
+
+### فيديو
+
+```sh
+<video src="video.mp4" width="400" height="300" controls poster="cover.jpg">
+  المتصفح لا يدعم الفيديو
+</video>
+```
+
+- controls: لإظهار أزرار التشغيل
+- poster: صورة مصغرة قبل التشغيل
+
+---
+
+### صوت
+
+```sh
+<audio src="sound.mp3" controls muted preload="auto">
+  المتصفح لا يدعم الصوت
+</audio>
+```
+
+- muted: كتم الصوت افتراضيًا
+- preload:
+  - auto: تحميل تلقائي
+  - none: لا يتم التحميل إلا عند التشغيل
+  - metadata: تحميل معلومات الملف فقط
+
+---
+
+## روابط وصفحات خارجية
+
+```sh
+<a href="https://example.com" target="_blank">افتح الموقع</a>
+```
+
+- target="_blank": لفتح الرابط في نافذة جديدة
+- target="_self": (افتراضي) نفس النافذة
+
+---
+
+### روابط داخلية
+
+```sh
+<a href="about.html">حول الموقع</a>
+```
+
+- الروابط النسبية تُكتب حسب موقع الملف الحالي.
+
+---
+
+## الصور وصور GIF
+
+```sh
+<img src="image.gif" alt="صورة متحركة" width="300" height="200">
+```
+
+- يمكن استخدام GIF تمامًا كالصورة.
+
+---
+
+## التضمين داخل إطار
+
+```sh
+<iframe src="https://example.com" width="500" height="300"></iframe>
+```
+
+- يستخدم لتضمين مواقع، فيديوهات، PDF... إلخ
+
+---
+
+### تضمين فيديو يوتيوب
+
+- من اليوتيوب: كليك يمين على الفيديو → "نسخ رمز التضمين"
+- النتيجة تكون مثل:
+
+```sh
+<iframe width="560" height="315"
+src="https://www.youtube.com/embed/ID"
+title="YouTube video" frameborder="0"
+allowfullscreen></iframe>
+```
+
+---
+
+## النماذج (Forms)
+
+### زر
+
+```sh
+<input type="button" value="اضغط هنا">
+```
+
+أو:
+
+```sh
+<button type="button">اضغط هنا</button>
+```
+
+---
+
+### نموذج تسجيل
+
+```sh
+<form>
+  <input type="text" placeholder="اسم المستخدم"><br>
+  <input type="password" placeholder="كلمة السر"><br>
+  <input type="email" placeholder="البريد الإلكتروني"><br>
+  <input type="number" placeholder="السن"><br>
+  <input type="tel" placeholder="رقم الهاتف"><br>
+  <input type="submit" value="تسجيل">
+</form>
+```
+
+- placeholder: نص مساعد داخل الحقل
+
+---
+
+### أسئلة متعددة الاختيارات
+
+```sh
+<form>
+  <p>ما هو لونك المفضل؟</p>
+  <label><input type="radio" name="color" value="red" checked> أحمر</label><br>
+  <label><input type="radio" name="color" value="blue"> أزرق</label><br>
+  <input type="submit" value="إرسال">
+</form>
+```
+
+- name نفسه لجعل الاختيارات حصرية
+- checked لتحديد القيمة مبدئيًا
+
+---
+
+### مربعات اختيار (Checkbox)
+
+```sh
+<form>
+  <label><input type="checkbox"> أوافق على الشروط</label><br>
+  <input type="submit" value="إرسال">
+</form>
+```
+
+---
+
+### حقل نص طويل
+
+```sh
+<textarea rows="5" cols="30">اكتب رسالتك هنا...</textarea>
+```
+
+---
+
+### عناصر تنسيق
+
+```sh
+<br>  <!-- سطر جديد -->
+<hr>  <!-- خط فاصل -->
+```
+
+---
+
+## أنواع العناصر في HTML
+
+### Block مقابل Inline
+
+#### عناصر Block
+
+- تأخذ كامل عرض السطر
+- تبدأ من سطر جديد
+- يمكن تغيير العرض والطول
+
+أمثلة:
+
+```sh
+<div></div>
+<p></p>
+<h1></h1>
+<ul></ul>
+<li></li>
+<table></table>
+```
+
+---
+
+#### عناصر Inline
+
+- تظهر في نفس سطر النص
+- لا يمكنها أخذ عرض/طول بشكل افتراضي
+- تُستعمل داخل عناصر أخرى
+
+أمثلة:
+
+```sh
+<span></span>
+<a href=""></a>
+<strong></strong>
+<em></em>
+<img>
+```
+
+---
+
+### الفرق في التنسيق
+
+| الخاصية       | Block         | Inline         |
+| -------------- | ------------- | --------------- |
+| العرض والطول    | مسموح         | لا يعمل افتراضيًا |
+| الخلفية         | يغطي السطر كله | يغطي النص فقط  |
+| Margin/Padding | جميع الجهات    | فقط Left/Right  |
+
+---
+
+## خصائص العرض (Display)
+
+- display: block; — يحول العنصر إلى Block
+- display: inline; — يحوله إلى Inline
+- display: inline-block; — مثل inline لكن يسمح بالعرض والطول
+- display: none; — يخفي العنصر ويزيله تمامًا من الصفحة
+
+---
+
+## إخفاء العناصر مع إبقاء مكانها
+
+- visibility: visible; (الوضع الافتراضي)
+- visibility: hidden; (يخفي العنصر لكن يحافظ على مكانه)
+
+---
+
+## محاذاة النصوص في الوسط
+
+### في HTML فقط
+
+```sh
+<center>النص في الوسط</center>
+```
+
+> ⚠️ تنسيق قديم غير مفضل – الأفضل استخدام CSS:
+
+```sh
+<body style="text-align: center;">
+  المحتوى هنا
+</body>
+```
+
+---
+
+## استخدام التفاصيل / السرد التوضيحي
+
+لإنشاء حاويات قابلة للطي مع عناوين مثل "About":
+
+```sh
+<details>
+  <summary>About</summary>
+  <p>هذه المعلومات تظهر عند الضغط</p>
+  <img src="image.jpg">
+  <br>
+  <img src="image2.jpg">
+</details>
+```
+
+---
+
+## قوائم منسقة
+
+### قائمة مرقمة
+
+```sh
+<ol type="A">
+  <li>Ahmed</li>
+  <li>Ali</li>
+</ol>
+```
+
+- type: 1، A، a، I، i
+
+---
+
+### قائمة غير مرقمة
+
+```sh
+<ul type="square">
+  <li>Home</li>
+  <li>About</li>
+</ul>
+```
+
+- type: disc، circle، square
+
+---
+
+### قائمة وصفية
+
+```sh
+<dl>
+  <dt>HTML</dt>
+  <dd>لغة هيكلة صفحات الويب</dd>
+  <dt>CSS</dt>
+  <dd>لغة تنسيق وتصميم الصفحات</dd>
+</dl>
+```
+
+---
+
+## عناصر قديمة وغير موصى بها (Deprecated)
+
+- <font>: التحكم في الخطوط، الألوان، الأحجام
+- <center>: تم الاستعاضة عنه بـ CSS
+- bgcolor و align في الوسوم: يفضل استخدام CSS
+
+---
+
+## ملاحظات هامة
+
+- بعض الخصائص القديمة لا تزال مدعومة لكن يفضل كتابة CSS في ملفات منفصلة.
+- افصل الهيكل (HTML) عن التنسيق (CSS) لأفضل ممارسات التطوير.
+- هذا الشرح يغطي أساسيات مهمة لكن ليس كل إمكانيات HTML. هناك وسوم متقدمة (video tracks، SVG، ARIA، إلخ) ودوال JavaScript للتفاعل.
+
+---
+
+## نهاية الملف
