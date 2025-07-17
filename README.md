@@ -110,21 +110,46 @@
 <meta name="viewport">
 ```
 
-## لربط CSS خارجي:
+## لتحديث الموقع كل مدة معينة مثلا 3 ثواني:
 ```sh
-<link>
+<meta http-equive="refresh" content="3">
 ```
 
-## لكتابة CSS داخلي:
+### مثلا إن انتقلنا لموقع جوجل خلال 4 ثواني تكون:
 ```sh
-<style>
+<meta http-equive="refresh" content="5" url=https://www.google.com/>
 ```
 
 ## للبحث عن كل أنواع الميتا اضغط [هنا](https://www.w3schools.com/tags/tag_meta.asp)
 
+## لربط CSS خارجي:
+```sh
+<link rel="stylesheet" href="css/style.css">
+```
+- rel="stylesheet" : هو نوع علاقة الربط بملفات css
+- href="css/style.css" : هو موقع الملف
+
+## لكتابة CSS داخلي:
+```sh
+<style>
+</style>
+```
+
+## لكتابة Java script داخلي:
+```
+<script>
+</script>
+```
+
 ---
 
 # داخل جسم الموقع (body):
+
+---
+
+## الأوسمة تنقسم لقسمين:
+- block: تنشئ سطرا جديدا (خاصة بالعناوين والفقرات)
+- inline: تكون في نفس السطر (ختصة بتنسيق النصوص بدلا من css)
 
 ---
 
@@ -149,6 +174,16 @@
 - خط فاصل:
 ```sh
 <hr>
+```
+
+- لمراعاة المسافات البادئة والأسطر الجديدة لمجموعة نصوص (مثل الأكواد)
+```sh
+<code>
+<pre>
+if True:
+  print("Hello!")
+</pre>
+</code>
 ```
 
 ---
@@ -190,6 +225,13 @@ X<sub>2</sub>
 10<sup>3</sup>
 ```
 
+- صغير:
+```sh
+<small>صغير</small>
+```
+
+- 
+
 ---
 
 ## الروابط
@@ -206,7 +248,7 @@ X<sub>2</sub>
 
 - رابط تنزيل:
 ```sh
-<a href="file.pdf" download>تحميل</a>
+<a href="file.pdf" download="اسم الملف بعد التحميل">تحميل</a>
 ```
 
 ---
@@ -222,6 +264,7 @@ X<sub>2</sub>
 ```sh
 <img src="img.jpg" alt="..." title="شرح" loading="lazy">
 ```
+### يجب ان نكتب الصورة بمسارها الصحيح فنكتب اسمها فقط لو كانت داخل مجلد المشروع مباشرة أو لو كانت داخل المجلد فنكتبها كما هي داخل المجلد مثل "folder\img.jpg" أو لو كانت في مسار آخر أصلا فنكتب المسار كامل هكذا مثلا "D:\...\...\Images"
 
 ---
 
